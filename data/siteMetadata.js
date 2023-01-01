@@ -2,7 +2,8 @@ const siteMetadata = {
   title: 'Satomi_Blog',
   author: 'Satomi',
   headerTitle: 'Satomi_Blog',
-  description: 'A blog about my business, tech, Japan.',
+  description:
+    'A blog about my business, tech, Japan. 日々の備忘録。テクノロジーやビジネス、思ったこと、感じたこと、忘れないように。',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
@@ -10,12 +11,12 @@ const siteMetadata = {
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
   socialBanner: '/static/images/twitter-card.png',
-  email: 'address@yoursite.com',
+  email: 'satomi@zeteoh.com',
   github: 'https://github.com',
-  twitter: 'https://twitter.com/Twitter',
+  twitter: 'https://twitter.com/Satomi48650478https://twitter.com/Twitter',
   facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
+  linkedin: 'https://www.linkedin.com/in/satomi-leguilly/',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
