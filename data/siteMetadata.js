@@ -6,7 +6,7 @@ const siteMetadata = {
     'A blog about my business, tech, Japan. 日々の備忘録。テクノロジーやビジネス、思ったこと、感じたこと、忘れないように。',
   language: 'en-us',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
+  siteUrl: 'https://satomi.tech',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/static/images/logo.png',
   image: '/static/images/avatar.png',
