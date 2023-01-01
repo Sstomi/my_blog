@@ -13,9 +13,9 @@ const siteMetadata = {
   socialBanner: '/static/images/twitter-card.png',
   email: 'satomi@zeteoh.com',
   github: 'https://github.com',
-  twitter: 'https://twitter.com/Satomi48650478https://twitter.com/Twitter',
+  twitter: 'https://twitter.com/Satomi48650478',
   facebook: 'https://facebook.com',
-  youtube: 'https://youtube.com',
+  youtube: 'https://www.youtube.com/@zeteoh7571/featured',
   linkedin: 'https://www.linkedin.com/in/satomi-leguilly/',
   locale: 'en-US',
   analytics: {
