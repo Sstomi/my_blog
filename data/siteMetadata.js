@@ -3,7 +3,7 @@ const siteMetadata = {
   author: 'Satomi',
   headerTitle: 'Satomi_Blog',
   description:
-    'A blog about my business, tech, Japan. 日々の備忘録。テクノロジーやビジネス、思ったこと、感じたこと、忘れないように。',
+    'This is a blog about business, tech, and my daily life. 日々の備忘録。テクノロジーやビジネス、勉強したこと、思ったこと　など。',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://satomi.tech',
