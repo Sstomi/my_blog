@@ -1,0 +1,105 @@
+---
+title: 'Dart の基本1'
+date: '2023-01-15'
+tags: ['Dart', 'Programming']
+draft: false
+summary: Typeとはなんぞや
+---
+
+## Dart とは何か
+
+Dart は、Google が開発した**Object-oriented programming language**（オブジェクト指向プログラミング）です。技術的な制限はないが、主に Web （Angular Dart または Flutter for Web )やモバイルアプリ(Flutter)のフロントエンド UI を作成するために使われます。
+
+Dart は、（モバイルアプリを構築するときに使用する場合は）ネイティブなマシンコードにコンパイル\*されます。また、他のプログラミング言語（Java, Java Script, C#）の最新の機能からインスピレーションを得ています。また**Strongly typed**である。
+
+Dart はコンパイルされた言語であり、書いたコードがそのまま実行されるのではなく、コンパイラによって解析され、マシンコードに変換されます。
+
+\*ソースコードの中身をコンピューターがわかるように翻訳すること
+
+## Strongly typed の意味
+
+ググったところ、strongly typed の日本語訳は「強い型付け」。よくわからん。ということで少し深掘りしてみる。ここでは strongly typed / types/ とかそのままの言葉を使っていきます。
+
+Dart は、Strongly typed なプログラミング言語です。（言語によって、strong と weak がある。参考：**[Comparison of programming languages by type system](https://en.wikipedia.org/wiki/Comparison_of_programming_languages_by_type_system) by Wikipedia**）
+
+### まず、Type とは何か
+
+プログラムで使用する全ての値（例：保存するユーザー入力）には Type（型）があります。例えば「テキスト」のことを、Dart や他のたくさんのプログラミング言語では「S**tring**」と呼びます。
+
+一方、ユーザーの年齢を扱う場合などでは、小数点以下の桁数がない数値「**intenger**」（整数値）を使用します。小数点以下の桁数がある数値は「**double**」（他のプログラミング言語では「float」）と呼ばれます。
+
+Dart にはこれら基本的な Type 以外にもたくさんあります。（これについては後から Note する予定）
+
+### なぜ Type が必要なのか？
+
+二つの理由がある。
+
+1. コンピューターのメモリを最適化するため。
+   例：int（整数）は string（テキスト）より軽い
+2. オペレーティングシステムが、Type を知っていればより効率的に動かすことができる。
+
+### 種類
+
+▶︎ **String**
+
+```dart
+void main (){
+String myName = 'Satomi';
+}
+```
+
+テキストを保持。シングルクォート（’’）or ダブルクォート（””）を使用する。
+
+▶︎ **num, int, double**
+
+```dart
+void main (){
+int age =30;
+double price = 9.98
+}
+```
+
+▶︎ **object**
+
+```dart
+class Person(){
+String name = 'Satomi';
+}
+
+void main(){
+var person =  Person();
+}
+```
+
+一般的に、Dart では全てのものが object である。（整数も）
+✏️ Memo
+class ・・大文字スタート
+variable ・・小文字スタート
+
+## Strongly typed と Weak typed の違いは？
+
+Dart は、Strongly typed。
+
+```dart
+void main() {
+  int myInt = 6;
+  String myString ='6';
+  print(myInt + myString);
+}
+```
+
+結果 → Error: A value of type 'String' can't be assigned to a variable of type 'num'.
+print(myInt + myString);
+^
+
+👉  Dart では、int は整数！、String はテキスト！　これがとても厳密である。なので上のようにエラーが出る。扱いづらいけど、バグが発生しずらい。
+
+では、Weak typed はどうなのか。JavaScript を例に挙げてみる。
+
+```jsx
+console.log(6 + '6')
+```
+
+結果 →66
+
+👉  整数とテキストの分け方があいまい。フレキシブルだけど、よりバグが発生しやすい。
