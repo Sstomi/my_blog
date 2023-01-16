@@ -1,0 +1,120 @@
+---
+title: Dartの基本2
+date: '2023-01-16'
+tags: ['Dart', 'Programming']
+draft: false
+summary: 🦑 スルメのように何回も噛み締めながら理解していきたい、変数と関数についてのまとめ
+---
+
+## 変数と関数
+
+### 変数について
+
+プログラムでは通常、値を保存する必要があります。データベースやファイルではなく、メモリに保存する必要があります。また、中間結果を保存しなければいけない、といったこともあります。
+
+このような情報（＝値）は、**「変数」Variables** に保存します。
+
+**変数とは、データコンテナのことで、名前を付け、任意の形の値を格納することができます。**
+
+例：
+
+```dart
+var myAge = 44;
+```
+
+→ 値 44 の整数 ( int )を格納する変数 ( var )である。
+
+var は、Dart に myAge が変数であることを知らせます。var の代わりに、type name （型名）も使用できます。
+
+変数について Dart に知らせるだけでなく、変数に格納されているデータの type （型）についても知らせることができます。
+
+Dart は[「型推論」（type inference）](https://en.wikipedia.org/wiki/Type_inference)という特徴があります。これは、Dart が値の型の推論に関してとても賢いということを意味しています。
+もし var で変数を作成した場合でも、Dart は myAge が int 型 であると推測することができます。なぜなら最初から値を代入しているからです。
+
+このような、組み込まれた型推論があるため、変数を定義するときは、はっきりと型を定義せずに、var を使用するのが良いとされています。
+
+初期値なしで変数を作成するときは、Dart にどのような種類のデータを保存する予定かを知らせる必要があるため、以下のようになります。
+
+```dart
+int myAge;
+myAge = 44;
+```
+
+### 関数について
+
+変数の他に、あらゆるプログラミング言語の核となるのが「関数」です。
+関数は、コードを**「再利用可能なコードスニペット」に「アウトソース」する**ことを可能にします。
+
+例：
+
+```dart
+var price1 = 9.99;
+var price2 = 10.99;
+var total = price1 + price2;
+
+var numOfTempra1 = 10;
+var numOfTempra2 = 45;
+var totalTempra = numOfTempra1  numOfTempra2;
+```
+
+🍤  上の例では、2 つの数字を足すということを、2 つの異なる場所で行なっています。もしこんなことを 1000 回繰り返さなきゃいけなくなったら、当然ミスが起きやすくなります。何よりそんなことやってられませんよね。
+こんなことを繰り返さなくても良いように「関数」Function があります。
+
+このロジックを一つの関数に組み込んで、いつでも好きなときに呼び出せるようになると便利ですよね！
+
+👇
+
+```dart
+num addNumbers(num n1, num n2){
+//use num as a type because it should work with int and double
+return n1 + n2;
+}
+
+var price1 = 9.99;
+var price2 = 10.99;
+var total = addNumbers(price1,price2);
+
+var numOfTempra1 = 10;
+var numOfTempra2 = 45;
+var totalTempra = addNumbers(numOfTempra1, numOfTempra2);
+```
+
+関数は**引数 arguments( ()の中のデータ、基本的に変数でその関数にスコープされている)** を取ることができます。
+
+**スコープ**とは、その変数をブロック（関数本体、{}で囲まれたコード）の中でのみ使用できることを意味します。
+
+さらに、関数は値を返すこともできます。**（return）**
+
+## “Object-oriented” （オブジェクト指向型）の意味とは？
+
+Dart は、Object-oriented （オブジェクト指向型）の言語です。Dart の中の値はオブジェクトです。
+
+**オブジェクトとは？**
+
+オブジェクトは、データ構造であり、多くのプログラミング言語で見られます。Dart では、テキスト（= String）や数値（= Integers and Doubles）のようなプリミティブな値を含めて全ての値がオブジェクトになります。
+
+オブジェクトは「クラス」( = class )の助けを借りて作成されます。どのオブジェクトもそれを作成（「インスタンス化」）するためのベースとなる設計図が必要だからです。
+
+```dart
+void main() {
+  var satomi = Person();
+  satomi.greet();
+}
+
+class Person {
+  var name = 'Satomi';
+  var age = 44;
+
+  void greet() {
+    print('Hi, I am ' + name + ' and I am ' + age.toString() + ' years old!');
+  }
+}
+```
+
+**main 関数**は Dart の特別な関数。
+アプリが起動したときに Dart が最初に実行する関数です。
+main の内部では、Person()を使用して Person に基づいた新しいオブジェクトを作成します。この
+このプロセスは**「クラスのインスタンス化」**と呼ばれ、「Person のインスタンス」を作成することになります。
+クラスは常に型として機能するため、自分自身の型は Person になります。
+
+🦑  スルメのように何回も噛み締めながら理解していきたい。
